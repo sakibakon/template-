@@ -22,13 +22,22 @@ ll mod(string s, ll n){
     return sum%n;
 
 }
+ll mod_another_way(string num, ll a) 
+{ 
+    ll res = 0; 
+    for (ll i = 0; i < num.length(); i++) 
+         res = (res*10 + (ll)num[i] - '0') %a; 
+  
+    return res; 
+}
 int main()
 {
     string s;
     ll n;
     cin>>s;
     cin>>n;
-    cout<<mod(s, n);
-
+    cout<<mod(s, n)<<endl;
+    cout<<mod_another_way(s, n);
+    return 0;
 }
 
