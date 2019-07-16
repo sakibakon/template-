@@ -1,0 +1,25 @@
+void sum( string s1, string s2)
+{
+    if(s1.size()>s2.size()){
+        while(s1.size()!=s2.size())s2="0"+s2;
+    }
+    else if(s2.size()>s1.size()){
+        while(s1.size()!=s2.size())s1="0"+s1;
+    }
+   int c=0;
+   string ans="";
+   for(int i=s1.size()-1 ; i>=0; i--){
+        int sum, t1=s1[i]-'0', t2=s2[i]-'0';
+        sum=t1+t2+c;
+
+        if(sum>=10){
+            c=sum/10;
+            sum=sum%10;
+        }
+        else c=0;
+       // cout<<sum;
+       char ch='0'+sum;  ans=ch+ans;
+   }
+   if(c>0){ char ch='0'+c;  ans=ch+ans; }
+   cout<<ans<<endl;
+}
